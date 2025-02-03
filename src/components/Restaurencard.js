@@ -2,15 +2,15 @@ import resObj from "../utils/mockData"
 const ResComponent=(props)=>{
     const {resObj}=props
 
-    const {text,}=resObj.info.action
+    const {text,type,link,altText,altTextCta}=resObj?.action
     return(
     <div className="res-card">
-        <img className="rescardimage" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vkhcohhmqfczycw9vsar"></img>
+        <img className="rescardimage" src={link}></img>
         <ul>
         <li>{text}</li>
         <li>{type}</li>
-        <li>{rating}</li>
-        <li>{time}</li>
+        <li>{altText}</li>
+        <li>{altTextCta}</li>
         </ul>
     </div>
     )

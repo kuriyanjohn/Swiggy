@@ -7,16 +7,9 @@ const Body=()=>{
             search
         </div>
         <div className="res-container">
-        <ResComponent 
-        name="food"
-        type="fastfood"
-        rating="4.4 stars"
-        time="30 mints"/>
-        <ResComponent 
-        name="biriyani"
-        type="meal"
-        rating="4.4 stars"
-        time="30 mints"/>
+        {resObj.info.map((restaurent)=>(
+            <ResComponent key={restaurent.id} resObj={restaurent} />
+        ))}
         </div>
     </div>
     )
