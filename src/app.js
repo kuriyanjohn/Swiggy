@@ -2,20 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header";
 import Body from "./components/Body";
-import ResComponent from "./components/Restaurencard";
-
-
-    
-
-
-
+import ResComponent from "./components/ResComponent.js";
 
 const AppLayout=()=>{
     return (
         <div className="app">
             <Header />
-            <Body />
-        </div>
+            <Body /> 
+          </div>
     )
 }
 
