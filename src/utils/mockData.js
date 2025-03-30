@@ -393,7 +393,7 @@ const restaurants= [
                         "Fast Food",
                         "Desserts"
                       ],
-                      "avgRating": 4.1,
+                      "avgRating": 4.6,
                       "parentId": "395453",
                       "avgRatingString": "4.1",
                       "totalRatingsString": "305",
