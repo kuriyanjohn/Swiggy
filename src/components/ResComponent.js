@@ -2,15 +2,14 @@ import restaurants from "../utils/mockData"
 const ResComponent=(props)=>{
     const {restaurants}=props
 
-    const {name,locality,costForTwo,cuisines,avgRating}=restaurants.info
+    const {title,layoutId,costForTwo,avgRating}=restaurants.widgetInfo
     return(
     <div className="res-card">
         <img className="rescardimage" ></img>
         <ul>
-        <li>Name:{name}</li>
-        <li>Location:{locality}</li>
+        <li>Name:{title}</li>
+        <li>Location:{layoutId}</li>
         <li>{costForTwo}</li>
-        <li>{cuisines.join(',')}</li>
         <li>Rating:{avgRating}</li>
 
         </ul>
