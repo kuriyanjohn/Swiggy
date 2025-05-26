@@ -1,6 +1,8 @@
 import ResComponent from "./ResComponent";
 import restaurants from "../utils/mockData";
 import { useState,useEffect } from "react";
+import Shimmer from "./shimmer";
+
 const Body=()=>{
     //local state variable
      const [listOfRestaurents,setListOfRestaurents]=useState([])
@@ -13,6 +15,9 @@ const Body=()=>{
         console.log('fetch data',json.data.widgets); 
         setListOfRestaurents(json.data.widgets)
     };
+    if(listOfRestaurents.length==0){
+        return <Shimmer />;
+    }
     return(
     <div className="body">
         <div className="search">
