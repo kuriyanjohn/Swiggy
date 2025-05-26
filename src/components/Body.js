@@ -13,12 +13,18 @@ const Body=()=>{
         const data=await fetch("https://www.swiggy.com/api/instamart/home?clientId=INSTAMART-APP")
         const json=await data.json()
         console.log('fetch data',json.data.widgets); 
-        setListOfRestaurents(json.data.widgets)
+
+        //optional chaining
+        setListOfRestaurents(json?.data?.widgets)
     };
-    if(listOfRestaurents.length==0){
-        return <Shimmer />;
-    }
-    return(
+
+    //conditional rendering
+    // if(listOfRestaurents.length==0){
+    //     return <Shimmer />;
+    // }
+    return listOfRestaurents.length==0 ? 
+    <Shimmer/>
+    :( 
     <div className="body">
         <div className="search">
             search
