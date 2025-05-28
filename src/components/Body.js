@@ -6,6 +6,7 @@ import Shimmer from "./shimmer";
 const Body=()=>{
     //local state variable
      const [listOfRestaurents,setListOfRestaurents]=useState([])
+     const [filteredRestaurent,setfilterdReataurent]=useState([])
      const [SearchText,setSearchText]=useState('')
      useEffect(()=>{
        fetchdata();
@@ -17,6 +18,7 @@ const Body=()=>{
 
         //optional chaining
         setListOfRestaurents(json?.data?.widgets)
+        setfilterdReataurent(json?.data?.widgets)
     };
 
     //conditional rendering
@@ -33,7 +35,10 @@ const Body=()=>{
                 setSearchText(e.target.value)
             }}/>
             <button onClick={()=>{
-
+                const filteredRestaurent=listOfRestaurents.filter((res)=>{
+                    res.data.name.includes(SearchText)
+                })
+                setfilterdReataurent(filteredRestaurent)
             }}>search</button>
         </div>
         <button className="filter_rating" onClick={()=>{
