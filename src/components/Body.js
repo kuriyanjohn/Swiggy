@@ -12,13 +12,13 @@ const Body=()=>{
        fetchdata();
      },[])
     const fetchdata=async()=>{
-        const data=await fetch("https://www.swiggy.com/api/instamart/home?clientId=INSTAMART-APP")
+        const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.51600&lng=76.21570&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json=await data.json()
         console.log('fetch data',json); 
 
         //optional chaining
-        setListOfRestaurents(json?.data?.widgets)
-        setfilterdReataurent(json?.data?.widgets)
+        setListOfRestaurents(json?.data?.cards[2]?.card?.card?.gridElement?.infoWithStyle?.restaurants)
+        setfilterdReataurent(json?.data?.cards[2]?.card?.card?.gridElement?.infoWithStyle?.restaurants)
     };
 
     //conditional rendering
